@@ -3,11 +3,64 @@
 //
 // jai generate.jai
 //
-
-
-
-Flags :: u64;
 Bool :: bool;
+
+BufferUsage :: enum u64 {
+    None :: 0;
+    MapRead :: 1;
+    MapWrite :: 2;
+    CopySrc :: 4;
+    CopyDst :: 8;
+    Index :: 16;
+    Vertex :: 32;
+    Uniform :: 64;
+    Storage :: 128;
+    Indirect :: 256;
+    QueryResolve :: 512;
+}
+
+ColorWriteMask :: enum u64 {
+    None :: 0;
+    Red :: 1;
+    Green :: 2;
+    Blue :: 4;
+    Alpha :: 8;
+    All :: 15;
+}
+
+HeapProperty :: enum u64 {
+    DeviceLocal :: 1;
+    HostVisible :: 2;
+    HostCoherent :: 4;
+    HostUncached :: 8;
+    HostCached :: 16;
+}
+
+MapMode :: enum u64 {
+    None :: 0;
+    Read :: 1;
+    Write :: 2;
+}
+
+ShaderStage :: enum u64 {
+    None :: 0;
+    Vertex :: 1;
+    Fragment :: 2;
+    Compute :: 4;
+}
+
+TextureUsage :: enum u64 {
+    None :: 0;
+    CopySrc :: 1;
+    CopyDst :: 2;
+    TextureBinding :: 4;
+    StorageBinding :: 8;
+    RenderAttachment :: 16;
+    TransientAttachment :: 32;
+    StorageAttachment :: 64;
+}
+
+
 
 AdapterImpl :: struct {}
 Adapter :: *AdapterImpl;
@@ -811,49 +864,6 @@ WaitStatus :: enum u32 {
     Force32                 :: 2147483647;
 }
 
-BufferUsage :: Flags;
-WGPUBufferUsage_None: BufferUsage : 0;
-WGPUBufferUsage_MapRead: BufferUsage : 1;
-WGPUBufferUsage_MapWrite: BufferUsage : 2;
-WGPUBufferUsage_CopySrc: BufferUsage : 4;
-WGPUBufferUsage_CopyDst: BufferUsage : 8;
-WGPUBufferUsage_Index: BufferUsage : 16;
-WGPUBufferUsage_Vertex: BufferUsage : 32;
-WGPUBufferUsage_Uniform: BufferUsage : 64;
-WGPUBufferUsage_Storage: BufferUsage : 128;
-WGPUBufferUsage_Indirect: BufferUsage : 256;
-WGPUBufferUsage_QueryResolve: BufferUsage : 512;
-ColorWriteMask :: Flags;
-WGPUColorWriteMask_None: ColorWriteMask : 0;
-WGPUColorWriteMask_Red: ColorWriteMask : 1;
-WGPUColorWriteMask_Green: ColorWriteMask : 2;
-WGPUColorWriteMask_Blue: ColorWriteMask : 4;
-WGPUColorWriteMask_Alpha: ColorWriteMask : 8;
-WGPUColorWriteMask_All: ColorWriteMask : 15;
-HeapProperty :: Flags;
-WGPUHeapProperty_DeviceLocal: HeapProperty : 1;
-WGPUHeapProperty_HostVisible: HeapProperty : 2;
-WGPUHeapProperty_HostCoherent: HeapProperty : 4;
-WGPUHeapProperty_HostUncached: HeapProperty : 8;
-WGPUHeapProperty_HostCached: HeapProperty : 16;
-MapMode :: Flags;
-WGPUMapMode_None: MapMode : 0;
-WGPUMapMode_Read: MapMode : 1;
-WGPUMapMode_Write: MapMode : 2;
-ShaderStage :: Flags;
-WGPUShaderStage_None: ShaderStage : 0;
-WGPUShaderStage_Vertex: ShaderStage : 1;
-WGPUShaderStage_Fragment: ShaderStage : 2;
-WGPUShaderStage_Compute: ShaderStage : 4;
-TextureUsage :: Flags;
-WGPUTextureUsage_None: TextureUsage : 0;
-WGPUTextureUsage_CopySrc: TextureUsage : 1;
-WGPUTextureUsage_CopyDst: TextureUsage : 2;
-WGPUTextureUsage_TextureBinding: TextureUsage : 4;
-WGPUTextureUsage_StorageBinding: TextureUsage : 8;
-WGPUTextureUsage_RenderAttachment: TextureUsage : 16;
-WGPUTextureUsage_TransientAttachment: TextureUsage : 32;
-WGPUTextureUsage_StorageAttachment: TextureUsage : 64;
 BufferMapCallback :: #type (status: BufferMapAsyncStatus, userdata: *void) -> void #c_call;
 Callback :: #type (userdata: *void) -> void #c_call;
 CompilationInfoCallback :: #type (status: CompilationInfoRequestStatus, compilationInfo: *CompilationInfo, userdata: *void) -> void #c_call;
@@ -2631,6 +2641,7 @@ DeviceForceLoss :: (device: Device, type: DeviceLostReason, message: StringView)
 DeviceGetAHardwareBufferProperties :: (device: Device, handle: *void, properties: *AHardwareBufferProperties) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetAHardwareBufferProperties";
 DeviceGetAdapter :: (device: Device) -> Adapter #foreign libwebgpu_dawn "wgpuDeviceGetAdapter";
 DeviceGetLimits :: (device: Device, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetLimits";
+
 DeviceGetQueue :: (device: Device) -> Queue #foreign libwebgpu_dawn "wgpuDeviceGetQueue";
 DeviceHasFeature :: (device: Device, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuDeviceHasFeature";
 DeviceImportSharedBufferMemory :: (device: Device, descriptor: *SharedBufferMemoryDescriptor) -> SharedBufferMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedBufferMemory";

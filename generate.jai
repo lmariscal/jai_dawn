@@ -29,6 +29,68 @@
     source_files: [..]string;
     array_add(*source_files, "./prebuilt/include/dawn/webgpu.h");
 
+    strip_enum_value_prefixes: [..][2]string;
+    array_add(*strip_enum_value_prefixes, .["WGPU", "TextureUsage"]);
+
+    HEADER :: #string DONE
+Bool :: bool;
+
+BufferUsage :: enum u64 {
+    None :: 0;
+    MapRead :: 1;
+    MapWrite :: 2;
+    CopySrc :: 4;
+    CopyDst :: 8;
+    Index :: 16;
+    Vertex :: 32;
+    Uniform :: 64;
+    Storage :: 128;
+    Indirect :: 256;
+    QueryResolve :: 512;
+}
+
+ColorWriteMask :: enum u64 {
+    None :: 0;
+    Red :: 1;
+    Green :: 2;
+    Blue :: 4;
+    Alpha :: 8;
+    All :: 15;
+}
+
+HeapProperty :: enum u64 {
+    DeviceLocal :: 1;
+    HostVisible :: 2;
+    HostCoherent :: 4;
+    HostUncached :: 8;
+    HostCached :: 16;
+}
+
+MapMode :: enum u64 {
+    None :: 0;
+    Read :: 1;
+    Write :: 2;
+}
+
+ShaderStage :: enum u64 {
+    None :: 0;
+    Vertex :: 1;
+    Fragment :: 2;
+    Compute :: 4;
+}
+
+TextureUsage :: enum u64 {
+    None :: 0;
+    CopySrc :: 1;
+    CopyDst :: 2;
+    TextureBinding :: 4;
+    StorageBinding :: 8;
+    RenderAttachment :: 16;
+    TransientAttachment :: 32;
+    StorageAttachment :: 64;
+}
+    DONE
+
     ok := generate_bindings(.{
         libnames=libnames,
         libpaths=libpaths,
@@ -41,25 +103,32 @@
         log_stripped_declarations = true,
         generate_compile_time_struct_checks = false,
         alias_original_enum_names=false,
+        header=HEADER,
+
+        visitor=dawn_visitor,
     }, "dawn.jai");
     if !ok {
         print("Failed to generate bindings");
         exit(1);
     }
-
-    // Hack to have "normal" bools
-    bindings, ok= := read_entire_file("dawn.jai");
-    if !ok {
-        log_error("Failed to load bindings");
-        exit(1);
-    }
-
-    bindings = replace(bindings, "Bool :: u32;", "Bool :: bool;");
-
-    ok = write_entire_file("dawn.jai", bindings);
-        if !ok {
-        log_error("Failed to write edited bindings");
-        exit(1);
-    }
-
 }
+
+dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
+    if starts_with(decl.name, "WGPUTextureUsage") ||
+        starts_with(decl.name, "WGPUBufferUsage") ||
+        starts_with(decl.name, "WGPUColorWriteMask") ||
+        starts_with(decl.name, "WGPUHeapProperty") ||
+        starts_with(decl.name, "WGPUMapMode") ||
+        starts_with(decl.name, "WGPUShaderStage")
+    {
+        decl.decl_flags |= .OMIT_FROM_OUTPUT;
+        return .STOP;
+    }
+    if decl.name == "WGPUBool" || decl.name == "WGPUFlags" || decl.name == "wgpuDeviceGetLostFuture" {
+        decl.decl_flags |= .OMIT_FROM_OUTPUT;
+        return .STOP;
+    }
+
+    return .RECURSE;
+}
+
