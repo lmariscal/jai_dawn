@@ -2517,320 +2517,320 @@ ProcTextureViewSetLabel :: #type (textureView: TextureView, label: StringView) -
 ProcTextureViewAddRef :: #type (textureView: TextureView) -> void #c_call;
 ProcTextureViewRelease :: #type (textureView: TextureView) -> void #c_call;
 
-AdapterInfoFreeMembers :: (value: AdapterInfo) -> void #foreign libwebgpu_dawn "wgpuAdapterInfoFreeMembers";
-AdapterPropertiesMemoryHeapsFreeMembers :: (value: AdapterPropertiesMemoryHeaps) -> void #foreign libwebgpu_dawn "wgpuAdapterPropertiesMemoryHeapsFreeMembers";
+FreeMembers :: (value: AdapterInfo) -> void #foreign libwebgpu_dawn "wgpuAdapterInfoFreeMembers";
+FreeMembers :: (value: AdapterPropertiesMemoryHeaps) -> void #foreign libwebgpu_dawn "wgpuAdapterPropertiesMemoryHeapsFreeMembers";
 CreateInstance :: (descriptor: *InstanceDescriptor) -> Instance #foreign libwebgpu_dawn "wgpuCreateInstance";
-DrmFormatCapabilitiesFreeMembers :: (value: DrmFormatCapabilities) -> void #foreign libwebgpu_dawn "wgpuDrmFormatCapabilitiesFreeMembers";
+FreeMembers :: (value: DrmFormatCapabilities) -> void #foreign libwebgpu_dawn "wgpuDrmFormatCapabilitiesFreeMembers";
 GetInstanceFeatures :: (features: *InstanceFeatures) -> Status #foreign libwebgpu_dawn "wgpuGetInstanceFeatures";
 GetProcAddress :: (procName: StringView) -> Proc #foreign libwebgpu_dawn "wgpuGetProcAddress";
-SharedBufferMemoryEndAccessStateFreeMembers :: (value: SharedBufferMemoryEndAccessState) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryEndAccessStateFreeMembers";
-SharedTextureMemoryEndAccessStateFreeMembers :: (value: SharedTextureMemoryEndAccessState) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryEndAccessStateFreeMembers";
-SurfaceCapabilitiesFreeMembers :: (value: SurfaceCapabilities) -> void #foreign libwebgpu_dawn "wgpuSurfaceCapabilitiesFreeMembers";
+FreeMembers :: (value: SharedBufferMemoryEndAccessState) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryEndAccessStateFreeMembers";
+FreeMembers :: (value: SharedTextureMemoryEndAccessState) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryEndAccessStateFreeMembers";
+FreeMembers :: (value: SurfaceCapabilities) -> void #foreign libwebgpu_dawn "wgpuSurfaceCapabilitiesFreeMembers";
 
 // Methods of Adapter
-AdapterCreateDevice :: (adapter: Adapter, descriptor: *DeviceDescriptor) -> Device #foreign libwebgpu_dawn "wgpuAdapterCreateDevice";
-AdapterEnumerateFeatures :: (adapter: Adapter, features: *FeatureName) -> u64 #foreign libwebgpu_dawn "wgpuAdapterEnumerateFeatures";
-AdapterGetFormatCapabilities :: (adapter: Adapter, format: TextureFormat, capabilities: *FormatCapabilities) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetFormatCapabilities";
-AdapterGetInfo :: (adapter: Adapter, info: *AdapterInfo) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetInfo";
-AdapterGetInstance :: (adapter: Adapter) -> Instance #foreign libwebgpu_dawn "wgpuAdapterGetInstance";
-AdapterGetLimits :: (adapter: Adapter, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetLimits";
-AdapterHasFeature :: (adapter: Adapter, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuAdapterHasFeature";
-AdapterRequestDevice :: (adapter: Adapter, descriptor: *DeviceDescriptor, callback: RequestDeviceCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuAdapterRequestDevice";
-AdapterRequestDevice2 :: (adapter: Adapter, options: *DeviceDescriptor, callbackInfo: RequestDeviceCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuAdapterRequestDevice2";
-AdapterRequestDeviceF :: (adapter: Adapter, options: *DeviceDescriptor, callbackInfo: RequestDeviceCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuAdapterRequestDeviceF";
-AdapterAddRef :: (adapter: Adapter) -> void #foreign libwebgpu_dawn "wgpuAdapterAddRef";
-AdapterRelease :: (adapter: Adapter) -> void #foreign libwebgpu_dawn "wgpuAdapterRelease";
+CreateDevice :: (adapter: Adapter, descriptor: *DeviceDescriptor) -> Device #foreign libwebgpu_dawn "wgpuAdapterCreateDevice";
+EnumerateFeatures :: (adapter: Adapter, features: *FeatureName) -> u64 #foreign libwebgpu_dawn "wgpuAdapterEnumerateFeatures";
+GetFormatCapabilities :: (adapter: Adapter, format: TextureFormat, capabilities: *FormatCapabilities) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetFormatCapabilities";
+GetInfo :: (adapter: Adapter, info: *AdapterInfo) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetInfo";
+GetInstance :: (adapter: Adapter) -> Instance #foreign libwebgpu_dawn "wgpuAdapterGetInstance";
+GetLimits :: (adapter: Adapter, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuAdapterGetLimits";
+HasFeature :: (adapter: Adapter, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuAdapterHasFeature";
+RequestDevice :: (adapter: Adapter, descriptor: *DeviceDescriptor, callback: RequestDeviceCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuAdapterRequestDevice";
+RequestDevice2 :: (adapter: Adapter, options: *DeviceDescriptor, callbackInfo: RequestDeviceCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuAdapterRequestDevice2";
+RequestDeviceF :: (adapter: Adapter, options: *DeviceDescriptor, callbackInfo: RequestDeviceCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuAdapterRequestDeviceF";
+AddRef :: (adapter: Adapter) -> void #foreign libwebgpu_dawn "wgpuAdapterAddRef";
+Release :: (adapter: Adapter) -> void #foreign libwebgpu_dawn "wgpuAdapterRelease";
 
 // Methods of BindGroup
-BindGroupSetLabel :: (bindGroup: BindGroup, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBindGroupSetLabel";
-BindGroupAddRef :: (bindGroup: BindGroup) -> void #foreign libwebgpu_dawn "wgpuBindGroupAddRef";
-BindGroupRelease :: (bindGroup: BindGroup) -> void #foreign libwebgpu_dawn "wgpuBindGroupRelease";
+SetLabel :: (bindGroup: BindGroup, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBindGroupSetLabel";
+AddRef :: (bindGroup: BindGroup) -> void #foreign libwebgpu_dawn "wgpuBindGroupAddRef";
+Release :: (bindGroup: BindGroup) -> void #foreign libwebgpu_dawn "wgpuBindGroupRelease";
 
 // Methods of BindGroupLayout
-BindGroupLayoutSetLabel :: (bindGroupLayout: BindGroupLayout, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutSetLabel";
-BindGroupLayoutAddRef :: (bindGroupLayout: BindGroupLayout) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutAddRef";
-BindGroupLayoutRelease :: (bindGroupLayout: BindGroupLayout) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutRelease";
+SetLabel :: (bindGroupLayout: BindGroupLayout, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutSetLabel";
+AddRef :: (bindGroupLayout: BindGroupLayout) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutAddRef";
+Release :: (bindGroupLayout: BindGroupLayout) -> void #foreign libwebgpu_dawn "wgpuBindGroupLayoutRelease";
 
 // Methods of Buffer
-BufferDestroy :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferDestroy";
-BufferGetConstMappedRange :: (buffer: Buffer, offset: u64, size: u64) -> *void #foreign libwebgpu_dawn "wgpuBufferGetConstMappedRange";
-BufferGetMapState :: (buffer: Buffer) -> BufferMapState #foreign libwebgpu_dawn "wgpuBufferGetMapState";
-BufferGetMappedRange :: (buffer: Buffer, offset: u64, size: u64) -> *void #foreign libwebgpu_dawn "wgpuBufferGetMappedRange";
-BufferGetSize :: (buffer: Buffer) -> u64 #foreign libwebgpu_dawn "wgpuBufferGetSize";
-BufferGetUsage :: (buffer: Buffer) -> BufferUsage #foreign libwebgpu_dawn "wgpuBufferGetUsage";
-BufferMapAsync :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callback: BufferMapCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuBufferMapAsync";
-BufferMapAsync2 :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callbackInfo: BufferMapCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuBufferMapAsync2";
-BufferMapAsyncF :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callbackInfo: BufferMapCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuBufferMapAsyncF";
-BufferSetLabel :: (buffer: Buffer, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBufferSetLabel";
-BufferUnmap :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferUnmap";
-BufferAddRef :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferAddRef";
-BufferRelease :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferRelease";
+Destroy :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferDestroy";
+GetConstMappedRange :: (buffer: Buffer, offset: u64, size: u64) -> *void #foreign libwebgpu_dawn "wgpuBufferGetConstMappedRange";
+GetMapState :: (buffer: Buffer) -> BufferMapState #foreign libwebgpu_dawn "wgpuBufferGetMapState";
+GetMappedRange :: (buffer: Buffer, offset: u64, size: u64) -> *void #foreign libwebgpu_dawn "wgpuBufferGetMappedRange";
+GetSize :: (buffer: Buffer) -> u64 #foreign libwebgpu_dawn "wgpuBufferGetSize";
+GetUsage :: (buffer: Buffer) -> BufferUsage #foreign libwebgpu_dawn "wgpuBufferGetUsage";
+MapAsync :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callback: BufferMapCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuBufferMapAsync";
+MapAsync2 :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callbackInfo: BufferMapCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuBufferMapAsync2";
+MapAsyncF :: (buffer: Buffer, mode: MapMode, offset: u64, size: u64, callbackInfo: BufferMapCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuBufferMapAsyncF";
+SetLabel :: (buffer: Buffer, label: StringView) -> void #foreign libwebgpu_dawn "wgpuBufferSetLabel";
+Unmap :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferUnmap";
+AddRef :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferAddRef";
+Release :: (buffer: Buffer) -> void #foreign libwebgpu_dawn "wgpuBufferRelease";
 
 // Methods of CommandBuffer
-CommandBufferSetLabel :: (commandBuffer: CommandBuffer, label: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandBufferSetLabel";
-CommandBufferAddRef :: (commandBuffer: CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuCommandBufferAddRef";
-CommandBufferRelease :: (commandBuffer: CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuCommandBufferRelease";
+SetLabel :: (commandBuffer: CommandBuffer, label: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandBufferSetLabel";
+AddRef :: (commandBuffer: CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuCommandBufferAddRef";
+Release :: (commandBuffer: CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuCommandBufferRelease";
 
 // Methods of CommandEncoder
-CommandEncoderBeginComputePass :: (commandEncoder: CommandEncoder, descriptor: *ComputePassDescriptor) -> ComputePassEncoder #foreign libwebgpu_dawn "wgpuCommandEncoderBeginComputePass";
-CommandEncoderBeginRenderPass :: (commandEncoder: CommandEncoder, descriptor: *RenderPassDescriptor) -> RenderPassEncoder #foreign libwebgpu_dawn "wgpuCommandEncoderBeginRenderPass";
-CommandEncoderClearBuffer :: (commandEncoder: CommandEncoder, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderClearBuffer";
-CommandEncoderCopyBufferToBuffer :: (commandEncoder: CommandEncoder, source: Buffer, sourceOffset: u64, destination: Buffer, destinationOffset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyBufferToBuffer";
-CommandEncoderCopyBufferToTexture :: (commandEncoder: CommandEncoder, source: *ImageCopyBuffer, destination: *ImageCopyTexture, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyBufferToTexture";
-CommandEncoderCopyTextureToBuffer :: (commandEncoder: CommandEncoder, source: *ImageCopyTexture, destination: *ImageCopyBuffer, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyTextureToBuffer";
-CommandEncoderCopyTextureToTexture :: (commandEncoder: CommandEncoder, source: *ImageCopyTexture, destination: *ImageCopyTexture, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyTextureToTexture";
-CommandEncoderFinish :: (commandEncoder: CommandEncoder, descriptor: *CommandBufferDescriptor) -> CommandBuffer #foreign libwebgpu_dawn "wgpuCommandEncoderFinish";
-CommandEncoderInjectValidationError :: (commandEncoder: CommandEncoder, message: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderInjectValidationError";
-CommandEncoderInsertDebugMarker :: (commandEncoder: CommandEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderInsertDebugMarker";
-CommandEncoderPopDebugGroup :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderPopDebugGroup";
-CommandEncoderPushDebugGroup :: (commandEncoder: CommandEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderPushDebugGroup";
-CommandEncoderResolveQuerySet :: (commandEncoder: CommandEncoder, querySet: QuerySet, firstQuery: u32, queryCount: u32, destination: Buffer, destinationOffset: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderResolveQuerySet";
-CommandEncoderSetLabel :: (commandEncoder: CommandEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderSetLabel";
-CommandEncoderWriteBuffer :: (commandEncoder: CommandEncoder, buffer: Buffer, bufferOffset: u64, data: *u8, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderWriteBuffer";
-CommandEncoderWriteTimestamp :: (commandEncoder: CommandEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderWriteTimestamp";
-CommandEncoderAddRef :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderAddRef";
-CommandEncoderRelease :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderRelease";
+BeginComputePass :: (commandEncoder: CommandEncoder, descriptor: *ComputePassDescriptor) -> ComputePassEncoder #foreign libwebgpu_dawn "wgpuCommandEncoderBeginComputePass";
+BeginRenderPass :: (commandEncoder: CommandEncoder, descriptor: *RenderPassDescriptor) -> RenderPassEncoder #foreign libwebgpu_dawn "wgpuCommandEncoderBeginRenderPass";
+ClearBuffer :: (commandEncoder: CommandEncoder, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderClearBuffer";
+CopyBufferToBuffer :: (commandEncoder: CommandEncoder, source: Buffer, sourceOffset: u64, destination: Buffer, destinationOffset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyBufferToBuffer";
+CopyBufferToTexture :: (commandEncoder: CommandEncoder, source: *ImageCopyBuffer, destination: *ImageCopyTexture, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyBufferToTexture";
+CopyTextureToBuffer :: (commandEncoder: CommandEncoder, source: *ImageCopyTexture, destination: *ImageCopyBuffer, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyTextureToBuffer";
+CopyTextureToTexture :: (commandEncoder: CommandEncoder, source: *ImageCopyTexture, destination: *ImageCopyTexture, copySize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderCopyTextureToTexture";
+Finish :: (commandEncoder: CommandEncoder, descriptor: *CommandBufferDescriptor) -> CommandBuffer #foreign libwebgpu_dawn "wgpuCommandEncoderFinish";
+InjectValidationError :: (commandEncoder: CommandEncoder, message: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderInjectValidationError";
+InsertDebugMarker :: (commandEncoder: CommandEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderInsertDebugMarker";
+PopDebugGroup :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderPopDebugGroup";
+PushDebugGroup :: (commandEncoder: CommandEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderPushDebugGroup";
+ResolveQuerySet :: (commandEncoder: CommandEncoder, querySet: QuerySet, firstQuery: u32, queryCount: u32, destination: Buffer, destinationOffset: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderResolveQuerySet";
+SetLabel :: (commandEncoder: CommandEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderSetLabel";
+WriteBuffer :: (commandEncoder: CommandEncoder, buffer: Buffer, bufferOffset: u64, data: *u8, size: u64) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderWriteBuffer";
+WriteTimestamp :: (commandEncoder: CommandEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderWriteTimestamp";
+AddRef :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderAddRef";
+Release :: (commandEncoder: CommandEncoder) -> void #foreign libwebgpu_dawn "wgpuCommandEncoderRelease";
 
 // Methods of ComputePassEncoder
-ComputePassEncoderDispatchWorkgroups :: (computePassEncoder: ComputePassEncoder, workgroupCountX: u32, workgroupCountY: u32, workgroupCountZ: u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderDispatchWorkgroups";
-ComputePassEncoderDispatchWorkgroupsIndirect :: (computePassEncoder: ComputePassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderDispatchWorkgroupsIndirect";
-ComputePassEncoderEnd :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderEnd";
-ComputePassEncoderInsertDebugMarker :: (computePassEncoder: ComputePassEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderInsertDebugMarker";
-ComputePassEncoderPopDebugGroup :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderPopDebugGroup";
-ComputePassEncoderPushDebugGroup :: (computePassEncoder: ComputePassEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderPushDebugGroup";
-ComputePassEncoderSetBindGroup :: (computePassEncoder: ComputePassEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetBindGroup";
-ComputePassEncoderSetLabel :: (computePassEncoder: ComputePassEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetLabel";
-ComputePassEncoderSetPipeline :: (computePassEncoder: ComputePassEncoder, pipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetPipeline";
-ComputePassEncoderWriteTimestamp :: (computePassEncoder: ComputePassEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderWriteTimestamp";
-ComputePassEncoderAddRef :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderAddRef";
-ComputePassEncoderRelease :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderRelease";
+DispatchWorkgroups :: (computePassEncoder: ComputePassEncoder, workgroupCountX: u32, workgroupCountY: u32, workgroupCountZ: u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderDispatchWorkgroups";
+DispatchWorkgroupsIndirect :: (computePassEncoder: ComputePassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderDispatchWorkgroupsIndirect";
+End :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderEnd";
+InsertDebugMarker :: (computePassEncoder: ComputePassEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderInsertDebugMarker";
+PopDebugGroup :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderPopDebugGroup";
+PushDebugGroup :: (computePassEncoder: ComputePassEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderPushDebugGroup";
+SetBindGroup :: (computePassEncoder: ComputePassEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetBindGroup";
+SetLabel :: (computePassEncoder: ComputePassEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetLabel";
+SetPipeline :: (computePassEncoder: ComputePassEncoder, pipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderSetPipeline";
+WriteTimestamp :: (computePassEncoder: ComputePassEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderWriteTimestamp";
+AddRef :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderAddRef";
+Release :: (computePassEncoder: ComputePassEncoder) -> void #foreign libwebgpu_dawn "wgpuComputePassEncoderRelease";
 
 // Methods of ComputePipeline
-ComputePipelineGetBindGroupLayout :: (computePipeline: ComputePipeline, groupIndex: u32) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuComputePipelineGetBindGroupLayout";
-ComputePipelineSetLabel :: (computePipeline: ComputePipeline, label: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePipelineSetLabel";
-ComputePipelineAddRef :: (computePipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePipelineAddRef";
-ComputePipelineRelease :: (computePipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePipelineRelease";
+GetBindGroupLayout :: (computePipeline: ComputePipeline, groupIndex: u32) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuComputePipelineGetBindGroupLayout";
+SetLabel :: (computePipeline: ComputePipeline, label: StringView) -> void #foreign libwebgpu_dawn "wgpuComputePipelineSetLabel";
+AddRef :: (computePipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePipelineAddRef";
+Release :: (computePipeline: ComputePipeline) -> void #foreign libwebgpu_dawn "wgpuComputePipelineRelease";
 
 // Methods of Device
-DeviceCreateBindGroup :: (device: Device, descriptor: *BindGroupDescriptor) -> BindGroup #foreign libwebgpu_dawn "wgpuDeviceCreateBindGroup";
-DeviceCreateBindGroupLayout :: (device: Device, descriptor: *BindGroupLayoutDescriptor) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuDeviceCreateBindGroupLayout";
-DeviceCreateBuffer :: (device: Device, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuDeviceCreateBuffer";
-DeviceCreateCommandEncoder :: (device: Device, descriptor: *CommandEncoderDescriptor) -> CommandEncoder #foreign libwebgpu_dawn "wgpuDeviceCreateCommandEncoder";
-DeviceCreateComputePipeline :: (device: Device, descriptor: *ComputePipelineDescriptor) -> ComputePipeline #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipeline";
-DeviceCreateComputePipelineAsync :: (device: Device, descriptor: *ComputePipelineDescriptor, callback: CreateComputePipelineAsyncCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsync";
-DeviceCreateComputePipelineAsync2 :: (device: Device, descriptor: *ComputePipelineDescriptor, callbackInfo: CreateComputePipelineAsyncCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsync2";
-DeviceCreateComputePipelineAsyncF :: (device: Device, descriptor: *ComputePipelineDescriptor, callbackInfo: CreateComputePipelineAsyncCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsyncF";
-DeviceCreateErrorBuffer :: (device: Device, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuDeviceCreateErrorBuffer";
-DeviceCreateErrorExternalTexture :: (device: Device) -> ExternalTexture #foreign libwebgpu_dawn "wgpuDeviceCreateErrorExternalTexture";
-DeviceCreateErrorShaderModule :: (device: Device, descriptor: *ShaderModuleDescriptor, errorMessage: StringView) -> ShaderModule #foreign libwebgpu_dawn "wgpuDeviceCreateErrorShaderModule";
-DeviceCreateErrorTexture :: (device: Device, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuDeviceCreateErrorTexture";
-DeviceCreateExternalTexture :: (device: Device, externalTextureDescriptor: *ExternalTextureDescriptor) -> ExternalTexture #foreign libwebgpu_dawn "wgpuDeviceCreateExternalTexture";
-DeviceCreatePipelineLayout :: (device: Device, descriptor: *PipelineLayoutDescriptor) -> PipelineLayout #foreign libwebgpu_dawn "wgpuDeviceCreatePipelineLayout";
-DeviceCreateQuerySet :: (device: Device, descriptor: *QuerySetDescriptor) -> QuerySet #foreign libwebgpu_dawn "wgpuDeviceCreateQuerySet";
-DeviceCreateRenderBundleEncoder :: (device: Device, descriptor: *RenderBundleEncoderDescriptor) -> RenderBundleEncoder #foreign libwebgpu_dawn "wgpuDeviceCreateRenderBundleEncoder";
-DeviceCreateRenderPipeline :: (device: Device, descriptor: *RenderPipelineDescriptor) -> RenderPipeline #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipeline";
-DeviceCreateRenderPipelineAsync :: (device: Device, descriptor: *RenderPipelineDescriptor, callback: CreateRenderPipelineAsyncCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsync";
-DeviceCreateRenderPipelineAsync2 :: (device: Device, descriptor: *RenderPipelineDescriptor, callbackInfo: CreateRenderPipelineAsyncCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsync2";
-DeviceCreateRenderPipelineAsyncF :: (device: Device, descriptor: *RenderPipelineDescriptor, callbackInfo: CreateRenderPipelineAsyncCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsyncF";
-DeviceCreateSampler :: (device: Device, descriptor: *SamplerDescriptor) -> Sampler #foreign libwebgpu_dawn "wgpuDeviceCreateSampler";
-DeviceCreateShaderModule :: (device: Device, descriptor: *ShaderModuleDescriptor) -> ShaderModule #foreign libwebgpu_dawn "wgpuDeviceCreateShaderModule";
-DeviceCreateTexture :: (device: Device, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuDeviceCreateTexture";
-DeviceDestroy :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceDestroy";
-DeviceEnumerateFeatures :: (device: Device, features: *FeatureName) -> u64 #foreign libwebgpu_dawn "wgpuDeviceEnumerateFeatures";
-DeviceForceLoss :: (device: Device, type: DeviceLostReason, message: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceForceLoss";
-DeviceGetAHardwareBufferProperties :: (device: Device, handle: *void, properties: *AHardwareBufferProperties) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetAHardwareBufferProperties";
-DeviceGetAdapter :: (device: Device) -> Adapter #foreign libwebgpu_dawn "wgpuDeviceGetAdapter";
-DeviceGetLimits :: (device: Device, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetLimits";
-
-DeviceGetQueue :: (device: Device) -> Queue #foreign libwebgpu_dawn "wgpuDeviceGetQueue";
-DeviceHasFeature :: (device: Device, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuDeviceHasFeature";
-DeviceImportSharedBufferMemory :: (device: Device, descriptor: *SharedBufferMemoryDescriptor) -> SharedBufferMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedBufferMemory";
-DeviceImportSharedFence :: (device: Device, descriptor: *SharedFenceDescriptor) -> SharedFence #foreign libwebgpu_dawn "wgpuDeviceImportSharedFence";
-DeviceImportSharedTextureMemory :: (device: Device, descriptor: *SharedTextureMemoryDescriptor) -> SharedTextureMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedTextureMemory";
-DeviceInjectError :: (device: Device, type: ErrorType, message: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceInjectError";
-DevicePopErrorScope :: (device: Device, oldCallback: ErrorCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDevicePopErrorScope";
-DevicePopErrorScope2 :: (device: Device, callbackInfo: PopErrorScopeCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDevicePopErrorScope2";
-DevicePopErrorScopeF :: (device: Device, callbackInfo: PopErrorScopeCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDevicePopErrorScopeF";
-DevicePushErrorScope :: (device: Device, filter: ErrorFilter) -> void #foreign libwebgpu_dawn "wgpuDevicePushErrorScope";
-DeviceSetDeviceLostCallback :: (device: Device, callback: DeviceLostCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetDeviceLostCallback";
-DeviceSetLabel :: (device: Device, label: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceSetLabel";
-DeviceSetLoggingCallback :: (device: Device, callback: LoggingCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetLoggingCallback";
-DeviceSetUncapturedErrorCallback :: (device: Device, callback: ErrorCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetUncapturedErrorCallback";
-DeviceTick :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceTick";
-DeviceValidateTextureDescriptor :: (device: Device, descriptor: *TextureDescriptor) -> void #foreign libwebgpu_dawn "wgpuDeviceValidateTextureDescriptor";
-DeviceAddRef :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceAddRef";
-DeviceRelease :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceRelease";
+CreateBindGroup :: (device: Device, descriptor: *BindGroupDescriptor) -> BindGroup #foreign libwebgpu_dawn "wgpuDeviceCreateBindGroup";
+CreateBindGroupLayout :: (device: Device, descriptor: *BindGroupLayoutDescriptor) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuDeviceCreateBindGroupLayout";
+CreateBuffer :: (device: Device, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuDeviceCreateBuffer";
+CreateCommandEncoder :: (device: Device, descriptor: *CommandEncoderDescriptor) -> CommandEncoder #foreign libwebgpu_dawn "wgpuDeviceCreateCommandEncoder";
+CreateComputePipeline :: (device: Device, descriptor: *ComputePipelineDescriptor) -> ComputePipeline #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipeline";
+CreateComputePipelineAsync :: (device: Device, descriptor: *ComputePipelineDescriptor, callback: CreateComputePipelineAsyncCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsync";
+CreateComputePipelineAsync2 :: (device: Device, descriptor: *ComputePipelineDescriptor, callbackInfo: CreateComputePipelineAsyncCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsync2";
+CreateComputePipelineAsyncF :: (device: Device, descriptor: *ComputePipelineDescriptor, callbackInfo: CreateComputePipelineAsyncCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateComputePipelineAsyncF";
+CreateErrorBuffer :: (device: Device, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuDeviceCreateErrorBuffer";
+CreateErrorExternalTexture :: (device: Device) -> ExternalTexture #foreign libwebgpu_dawn "wgpuDeviceCreateErrorExternalTexture";
+CreateErrorShaderModule :: (device: Device, descriptor: *ShaderModuleDescriptor, errorMessage: StringView) -> ShaderModule #foreign libwebgpu_dawn "wgpuDeviceCreateErrorShaderModule";
+CreateErrorTexture :: (device: Device, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuDeviceCreateErrorTexture";
+CreateExternalTexture :: (device: Device, externalTextureDescriptor: *ExternalTextureDescriptor) -> ExternalTexture #foreign libwebgpu_dawn "wgpuDeviceCreateExternalTexture";
+CreatePipelineLayout :: (device: Device, descriptor: *PipelineLayoutDescriptor) -> PipelineLayout #foreign libwebgpu_dawn "wgpuDeviceCreatePipelineLayout";
+CreateQuerySet :: (device: Device, descriptor: *QuerySetDescriptor) -> QuerySet #foreign libwebgpu_dawn "wgpuDeviceCreateQuerySet";
+CreateRenderBundleEncoder :: (device: Device, descriptor: *RenderBundleEncoderDescriptor) -> RenderBundleEncoder #foreign libwebgpu_dawn "wgpuDeviceCreateRenderBundleEncoder";
+CreateRenderPipeline :: (device: Device, descriptor: *RenderPipelineDescriptor) -> RenderPipeline #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipeline";
+CreateRenderPipelineAsync :: (device: Device, descriptor: *RenderPipelineDescriptor, callback: CreateRenderPipelineAsyncCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsync";
+CreateRenderPipelineAsync2 :: (device: Device, descriptor: *RenderPipelineDescriptor, callbackInfo: CreateRenderPipelineAsyncCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsync2";
+CreateRenderPipelineAsyncF :: (device: Device, descriptor: *RenderPipelineDescriptor, callbackInfo: CreateRenderPipelineAsyncCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDeviceCreateRenderPipelineAsyncF";
+CreateSampler :: (device: Device, descriptor: *SamplerDescriptor) -> Sampler #foreign libwebgpu_dawn "wgpuDeviceCreateSampler";
+CreateShaderModule :: (device: Device, descriptor: *ShaderModuleDescriptor) -> ShaderModule #foreign libwebgpu_dawn "wgpuDeviceCreateShaderModule";
+CreateTexture :: (device: Device, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuDeviceCreateTexture";
+Destroy :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceDestroy";
+EnumerateFeatures :: (device: Device, features: *FeatureName) -> u64 #foreign libwebgpu_dawn "wgpuDeviceEnumerateFeatures";
+ForceLoss :: (device: Device, type: DeviceLostReason, message: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceForceLoss";
+GetAHardwareBufferProperties :: (device: Device, handle: *void, properties: *AHardwareBufferProperties) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetAHardwareBufferProperties";
+GetAdapter :: (device: Device) -> Adapter #foreign libwebgpu_dawn "wgpuDeviceGetAdapter";
+GetLimits :: (device: Device, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetLimits";
+GetLostFuture :: (device: Device) -> Future #foreign __UnknownLib "wgpuDeviceGetLostFuture";
+GetQueue :: (device: Device) -> Queue #foreign libwebgpu_dawn "wgpuDeviceGetQueue";
+HasFeature :: (device: Device, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuDeviceHasFeature";
+ImportSharedBufferMemory :: (device: Device, descriptor: *SharedBufferMemoryDescriptor) -> SharedBufferMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedBufferMemory";
+ImportSharedFence :: (device: Device, descriptor: *SharedFenceDescriptor) -> SharedFence #foreign libwebgpu_dawn "wgpuDeviceImportSharedFence";
+ImportSharedTextureMemory :: (device: Device, descriptor: *SharedTextureMemoryDescriptor) -> SharedTextureMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedTextureMemory";
+InjectError :: (device: Device, type: ErrorType, message: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceInjectError";
+PopErrorScope :: (device: Device, oldCallback: ErrorCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDevicePopErrorScope";
+PopErrorScope2 :: (device: Device, callbackInfo: PopErrorScopeCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuDevicePopErrorScope2";
+PopErrorScopeF :: (device: Device, callbackInfo: PopErrorScopeCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuDevicePopErrorScopeF";
+PushErrorScope :: (device: Device, filter: ErrorFilter) -> void #foreign libwebgpu_dawn "wgpuDevicePushErrorScope";
+SetDeviceLostCallback :: (device: Device, callback: DeviceLostCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetDeviceLostCallback";
+SetLabel :: (device: Device, label: StringView) -> void #foreign libwebgpu_dawn "wgpuDeviceSetLabel";
+SetLoggingCallback :: (device: Device, callback: LoggingCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetLoggingCallback";
+SetUncapturedErrorCallback :: (device: Device, callback: ErrorCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuDeviceSetUncapturedErrorCallback";
+Tick :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceTick";
+ValidateTextureDescriptor :: (device: Device, descriptor: *TextureDescriptor) -> void #foreign libwebgpu_dawn "wgpuDeviceValidateTextureDescriptor";
+AddRef :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceAddRef";
+Release :: (device: Device) -> void #foreign libwebgpu_dawn "wgpuDeviceRelease";
 
 // Methods of ExternalTexture
-ExternalTextureDestroy :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureDestroy";
-ExternalTextureExpire :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureExpire";
-ExternalTextureRefresh :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureRefresh";
-ExternalTextureSetLabel :: (externalTexture: ExternalTexture, label: StringView) -> void #foreign libwebgpu_dawn "wgpuExternalTextureSetLabel";
-ExternalTextureAddRef :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureAddRef";
-ExternalTextureRelease :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureRelease";
+Destroy :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureDestroy";
+Expire :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureExpire";
+Refresh :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureRefresh";
+SetLabel :: (externalTexture: ExternalTexture, label: StringView) -> void #foreign libwebgpu_dawn "wgpuExternalTextureSetLabel";
+AddRef :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureAddRef";
+Release :: (externalTexture: ExternalTexture) -> void #foreign libwebgpu_dawn "wgpuExternalTextureRelease";
 
 // Methods of Instance
-InstanceCreateSurface :: (instance: Instance, descriptor: *SurfaceDescriptor) -> Surface #foreign libwebgpu_dawn "wgpuInstanceCreateSurface";
-InstanceEnumerateWGSLLanguageFeatures :: (instance: Instance, features: *WGSLFeatureName) -> u64 #foreign libwebgpu_dawn "wgpuInstanceEnumerateWGSLLanguageFeatures";
-InstanceHasWGSLLanguageFeature :: (instance: Instance, feature: WGSLFeatureName) -> Bool #foreign libwebgpu_dawn "wgpuInstanceHasWGSLLanguageFeature";
-InstanceProcessEvents :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceProcessEvents";
-InstanceRequestAdapter :: (instance: Instance, options: *RequestAdapterOptions, callback: RequestAdapterCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuInstanceRequestAdapter";
-InstanceRequestAdapter2 :: (instance: Instance, options: *RequestAdapterOptions, callbackInfo: RequestAdapterCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuInstanceRequestAdapter2";
-InstanceRequestAdapterF :: (instance: Instance, options: *RequestAdapterOptions, callbackInfo: RequestAdapterCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuInstanceRequestAdapterF";
-InstanceWaitAny :: (instance: Instance, futureCount: u64, futures: *FutureWaitInfo, timeoutNS: u64) -> WaitStatus #foreign libwebgpu_dawn "wgpuInstanceWaitAny";
-InstanceAddRef :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceAddRef";
-InstanceRelease :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceRelease";
+CreateSurface :: (instance: Instance, descriptor: *SurfaceDescriptor) -> Surface #foreign libwebgpu_dawn "wgpuInstanceCreateSurface";
+EnumerateWGSLLanguageFeatures :: (instance: Instance, features: *WGSLFeatureName) -> u64 #foreign libwebgpu_dawn "wgpuInstanceEnumerateWGSLLanguageFeatures";
+HasWGSLLanguageFeature :: (instance: Instance, feature: WGSLFeatureName) -> Bool #foreign libwebgpu_dawn "wgpuInstanceHasWGSLLanguageFeature";
+ProcessEvents :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceProcessEvents";
+RequestAdapter :: (instance: Instance, options: *RequestAdapterOptions, callback: RequestAdapterCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuInstanceRequestAdapter";
+RequestAdapter2 :: (instance: Instance, options: *RequestAdapterOptions, callbackInfo: RequestAdapterCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuInstanceRequestAdapter2";
+RequestAdapterF :: (instance: Instance, options: *RequestAdapterOptions, callbackInfo: RequestAdapterCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuInstanceRequestAdapterF";
+WaitAny :: (instance: Instance, futureCount: u64, futures: *FutureWaitInfo, timeoutNS: u64) -> WaitStatus #foreign libwebgpu_dawn "wgpuInstanceWaitAny";
+AddRef :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceAddRef";
+Release :: (instance: Instance) -> void #foreign libwebgpu_dawn "wgpuInstanceRelease";
 
 // Methods of PipelineLayout
-PipelineLayoutSetLabel :: (pipelineLayout: PipelineLayout, label: StringView) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutSetLabel";
-PipelineLayoutAddRef :: (pipelineLayout: PipelineLayout) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutAddRef";
-PipelineLayoutRelease :: (pipelineLayout: PipelineLayout) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutRelease";
+SetLabel :: (pipelineLayout: PipelineLayout, label: StringView) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutSetLabel";
+AddRef :: (pipelineLayout: PipelineLayout) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutAddRef";
+Release :: (pipelineLayout: PipelineLayout) -> void #foreign libwebgpu_dawn "wgpuPipelineLayoutRelease";
 
 // Methods of QuerySet
-QuerySetDestroy :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetDestroy";
-QuerySetGetCount :: (querySet: QuerySet) -> u32 #foreign libwebgpu_dawn "wgpuQuerySetGetCount";
-QuerySetGetType :: (querySet: QuerySet) -> QueryType #foreign libwebgpu_dawn "wgpuQuerySetGetType";
-QuerySetSetLabel :: (querySet: QuerySet, label: StringView) -> void #foreign libwebgpu_dawn "wgpuQuerySetSetLabel";
-QuerySetAddRef :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetAddRef";
-QuerySetRelease :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetRelease";
+Destroy :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetDestroy";
+GetCount :: (querySet: QuerySet) -> u32 #foreign libwebgpu_dawn "wgpuQuerySetGetCount";
+GetType :: (querySet: QuerySet) -> QueryType #foreign libwebgpu_dawn "wgpuQuerySetGetType";
+SetLabel :: (querySet: QuerySet, label: StringView) -> void #foreign libwebgpu_dawn "wgpuQuerySetSetLabel";
+AddRef :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetAddRef";
+Release :: (querySet: QuerySet) -> void #foreign libwebgpu_dawn "wgpuQuerySetRelease";
 
 // Methods of Queue
-QueueCopyExternalTextureForBrowser :: (queue: Queue, source: *ImageCopyExternalTexture, destination: *ImageCopyTexture, copySize: *Extent3D, options: *CopyTextureForBrowserOptions) -> void #foreign libwebgpu_dawn "wgpuQueueCopyExternalTextureForBrowser";
-QueueCopyTextureForBrowser :: (queue: Queue, source: *ImageCopyTexture, destination: *ImageCopyTexture, copySize: *Extent3D, options: *CopyTextureForBrowserOptions) -> void #foreign libwebgpu_dawn "wgpuQueueCopyTextureForBrowser";
-QueueOnSubmittedWorkDone :: (queue: Queue, callback: QueueWorkDoneCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDone";
-QueueOnSubmittedWorkDone2 :: (queue: Queue, callbackInfo: QueueWorkDoneCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDone2";
-QueueOnSubmittedWorkDoneF :: (queue: Queue, callbackInfo: QueueWorkDoneCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDoneF";
-QueueSetLabel :: (queue: Queue, label: StringView) -> void #foreign libwebgpu_dawn "wgpuQueueSetLabel";
-QueueSubmit :: (queue: Queue, commandCount: u64, commands: *CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuQueueSubmit";
-QueueWriteBuffer :: (queue: Queue, buffer: Buffer, bufferOffset: u64, data: *void, size: u64) -> void #foreign libwebgpu_dawn "wgpuQueueWriteBuffer";
-QueueWriteTexture :: (queue: Queue, destination: *ImageCopyTexture, data: *void, dataSize: u64, dataLayout: *TextureDataLayout, writeSize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuQueueWriteTexture";
-QueueAddRef :: (queue: Queue) -> void #foreign libwebgpu_dawn "wgpuQueueAddRef";
-QueueRelease :: (queue: Queue) -> void #foreign libwebgpu_dawn "wgpuQueueRelease";
+CopyExternalTextureForBrowser :: (queue: Queue, source: *ImageCopyExternalTexture, destination: *ImageCopyTexture, copySize: *Extent3D, options: *CopyTextureForBrowserOptions) -> void #foreign libwebgpu_dawn "wgpuQueueCopyExternalTextureForBrowser";
+CopyTextureForBrowser :: (queue: Queue, source: *ImageCopyTexture, destination: *ImageCopyTexture, copySize: *Extent3D, options: *CopyTextureForBrowserOptions) -> void #foreign libwebgpu_dawn "wgpuQueueCopyTextureForBrowser";
+OnSubmittedWorkDone :: (queue: Queue, callback: QueueWorkDoneCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDone";
+OnSubmittedWorkDone2 :: (queue: Queue, callbackInfo: QueueWorkDoneCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDone2";
+OnSubmittedWorkDoneF :: (queue: Queue, callbackInfo: QueueWorkDoneCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuQueueOnSubmittedWorkDoneF";
+SetLabel :: (queue: Queue, label: StringView) -> void #foreign libwebgpu_dawn "wgpuQueueSetLabel";
+Submit :: (queue: Queue, commandCount: u64, commands: *CommandBuffer) -> void #foreign libwebgpu_dawn "wgpuQueueSubmit";
+WriteBuffer :: (queue: Queue, buffer: Buffer, bufferOffset: u64, data: *void, size: u64) -> void #foreign libwebgpu_dawn "wgpuQueueWriteBuffer";
+WriteTexture :: (queue: Queue, destination: *ImageCopyTexture, data: *void, dataSize: u64, dataLayout: *TextureDataLayout, writeSize: *Extent3D) -> void #foreign libwebgpu_dawn "wgpuQueueWriteTexture";
+AddRef :: (queue: Queue) -> void #foreign libwebgpu_dawn "wgpuQueueAddRef";
+Release :: (queue: Queue) -> void #foreign libwebgpu_dawn "wgpuQueueRelease";
 
 // Methods of RenderBundle
-RenderBundleSetLabel :: (renderBundle: RenderBundle, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleSetLabel";
-RenderBundleAddRef :: (renderBundle: RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderBundleAddRef";
-RenderBundleRelease :: (renderBundle: RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderBundleRelease";
+SetLabel :: (renderBundle: RenderBundle, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleSetLabel";
+AddRef :: (renderBundle: RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderBundleAddRef";
+Release :: (renderBundle: RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderBundleRelease";
 
 // Methods of RenderBundleEncoder
-RenderBundleEncoderDraw :: (renderBundleEncoder: RenderBundleEncoder, vertexCount: u32, instanceCount: u32, firstVertex: u32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDraw";
-RenderBundleEncoderDrawIndexed :: (renderBundleEncoder: RenderBundleEncoder, indexCount: u32, instanceCount: u32, firstIndex: u32, baseVertex: s32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndexed";
-RenderBundleEncoderDrawIndexedIndirect :: (renderBundleEncoder: RenderBundleEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndexedIndirect";
-RenderBundleEncoderDrawIndirect :: (renderBundleEncoder: RenderBundleEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndirect";
-RenderBundleEncoderFinish :: (renderBundleEncoder: RenderBundleEncoder, descriptor: *RenderBundleDescriptor) -> RenderBundle #foreign libwebgpu_dawn "wgpuRenderBundleEncoderFinish";
-RenderBundleEncoderInsertDebugMarker :: (renderBundleEncoder: RenderBundleEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderInsertDebugMarker";
-RenderBundleEncoderPopDebugGroup :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderPopDebugGroup";
-RenderBundleEncoderPushDebugGroup :: (renderBundleEncoder: RenderBundleEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderPushDebugGroup";
-RenderBundleEncoderSetBindGroup :: (renderBundleEncoder: RenderBundleEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetBindGroup";
-RenderBundleEncoderSetIndexBuffer :: (renderBundleEncoder: RenderBundleEncoder, buffer: Buffer, format: IndexFormat, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetIndexBuffer";
-RenderBundleEncoderSetLabel :: (renderBundleEncoder: RenderBundleEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetLabel";
-RenderBundleEncoderSetPipeline :: (renderBundleEncoder: RenderBundleEncoder, pipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetPipeline";
-RenderBundleEncoderSetVertexBuffer :: (renderBundleEncoder: RenderBundleEncoder, slot: u32, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetVertexBuffer";
-RenderBundleEncoderAddRef :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderAddRef";
-RenderBundleEncoderRelease :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderRelease";
+Draw :: (renderBundleEncoder: RenderBundleEncoder, vertexCount: u32, instanceCount: u32, firstVertex: u32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDraw";
+DrawIndexed :: (renderBundleEncoder: RenderBundleEncoder, indexCount: u32, instanceCount: u32, firstIndex: u32, baseVertex: s32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndexed";
+DrawIndexedIndirect :: (renderBundleEncoder: RenderBundleEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndexedIndirect";
+DrawIndirect :: (renderBundleEncoder: RenderBundleEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderDrawIndirect";
+Finish :: (renderBundleEncoder: RenderBundleEncoder, descriptor: *RenderBundleDescriptor) -> RenderBundle #foreign libwebgpu_dawn "wgpuRenderBundleEncoderFinish";
+InsertDebugMarker :: (renderBundleEncoder: RenderBundleEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderInsertDebugMarker";
+PopDebugGroup :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderPopDebugGroup";
+PushDebugGroup :: (renderBundleEncoder: RenderBundleEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderPushDebugGroup";
+SetBindGroup :: (renderBundleEncoder: RenderBundleEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetBindGroup";
+SetIndexBuffer :: (renderBundleEncoder: RenderBundleEncoder, buffer: Buffer, format: IndexFormat, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetIndexBuffer";
+SetLabel :: (renderBundleEncoder: RenderBundleEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetLabel";
+SetPipeline :: (renderBundleEncoder: RenderBundleEncoder, pipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetPipeline";
+SetVertexBuffer :: (renderBundleEncoder: RenderBundleEncoder, slot: u32, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderSetVertexBuffer";
+AddRef :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderAddRef";
+Release :: (renderBundleEncoder: RenderBundleEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderBundleEncoderRelease";
 
 // Methods of RenderPassEncoder
-RenderPassEncoderBeginOcclusionQuery :: (renderPassEncoder: RenderPassEncoder, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderBeginOcclusionQuery";
-RenderPassEncoderDraw :: (renderPassEncoder: RenderPassEncoder, vertexCount: u32, instanceCount: u32, firstVertex: u32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDraw";
-RenderPassEncoderDrawIndexed :: (renderPassEncoder: RenderPassEncoder, indexCount: u32, instanceCount: u32, firstIndex: u32, baseVertex: s32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndexed";
-RenderPassEncoderDrawIndexedIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndexedIndirect";
-RenderPassEncoderDrawIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndirect";
-RenderPassEncoderEnd :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderEnd";
-RenderPassEncoderEndOcclusionQuery :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderEndOcclusionQuery";
-RenderPassEncoderExecuteBundles :: (renderPassEncoder: RenderPassEncoder, bundleCount: u64, bundles: *RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderExecuteBundles";
-RenderPassEncoderInsertDebugMarker :: (renderPassEncoder: RenderPassEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderInsertDebugMarker";
-RenderPassEncoderMultiDrawIndexedIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64, maxDrawCount: u32, drawCountBuffer: Buffer, drawCountBufferOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderMultiDrawIndexedIndirect";
-RenderPassEncoderMultiDrawIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64, maxDrawCount: u32, drawCountBuffer: Buffer, drawCountBufferOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderMultiDrawIndirect";
-RenderPassEncoderPixelLocalStorageBarrier :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPixelLocalStorageBarrier";
-RenderPassEncoderPopDebugGroup :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPopDebugGroup";
-RenderPassEncoderPushDebugGroup :: (renderPassEncoder: RenderPassEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPushDebugGroup";
-RenderPassEncoderSetBindGroup :: (renderPassEncoder: RenderPassEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetBindGroup";
-RenderPassEncoderSetBlendConstant :: (renderPassEncoder: RenderPassEncoder, color: *Color) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetBlendConstant";
-RenderPassEncoderSetIndexBuffer :: (renderPassEncoder: RenderPassEncoder, buffer: Buffer, format: IndexFormat, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetIndexBuffer";
-RenderPassEncoderSetLabel :: (renderPassEncoder: RenderPassEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetLabel";
-RenderPassEncoderSetPipeline :: (renderPassEncoder: RenderPassEncoder, pipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetPipeline";
-RenderPassEncoderSetScissorRect :: (renderPassEncoder: RenderPassEncoder, x: u32, y: u32, width: u32, height: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetScissorRect";
-RenderPassEncoderSetStencilReference :: (renderPassEncoder: RenderPassEncoder, reference: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetStencilReference";
-RenderPassEncoderSetVertexBuffer :: (renderPassEncoder: RenderPassEncoder, slot: u32, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetVertexBuffer";
-RenderPassEncoderSetViewport :: (renderPassEncoder: RenderPassEncoder, x: float, y: float, width: float, height: float, minDepth: float, maxDepth: float) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetViewport";
-RenderPassEncoderWriteTimestamp :: (renderPassEncoder: RenderPassEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderWriteTimestamp";
-RenderPassEncoderAddRef :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderAddRef";
-RenderPassEncoderRelease :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderRelease";
+BeginOcclusionQuery :: (renderPassEncoder: RenderPassEncoder, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderBeginOcclusionQuery";
+Draw :: (renderPassEncoder: RenderPassEncoder, vertexCount: u32, instanceCount: u32, firstVertex: u32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDraw";
+DrawIndexed :: (renderPassEncoder: RenderPassEncoder, indexCount: u32, instanceCount: u32, firstIndex: u32, baseVertex: s32, firstInstance: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndexed";
+DrawIndexedIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndexedIndirect";
+DrawIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderDrawIndirect";
+End :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderEnd";
+EndOcclusionQuery :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderEndOcclusionQuery";
+ExecuteBundles :: (renderPassEncoder: RenderPassEncoder, bundleCount: u64, bundles: *RenderBundle) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderExecuteBundles";
+InsertDebugMarker :: (renderPassEncoder: RenderPassEncoder, markerLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderInsertDebugMarker";
+MultiDrawIndexedIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64, maxDrawCount: u32, drawCountBuffer: Buffer, drawCountBufferOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderMultiDrawIndexedIndirect";
+MultiDrawIndirect :: (renderPassEncoder: RenderPassEncoder, indirectBuffer: Buffer, indirectOffset: u64, maxDrawCount: u32, drawCountBuffer: Buffer, drawCountBufferOffset: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderMultiDrawIndirect";
+PixelLocalStorageBarrier :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPixelLocalStorageBarrier";
+PopDebugGroup :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPopDebugGroup";
+PushDebugGroup :: (renderPassEncoder: RenderPassEncoder, groupLabel: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderPushDebugGroup";
+SetBindGroup :: (renderPassEncoder: RenderPassEncoder, groupIndex: u32, group: BindGroup, dynamicOffsetCount: u64, dynamicOffsets: *u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetBindGroup";
+SetBlendConstant :: (renderPassEncoder: RenderPassEncoder, color: *Color) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetBlendConstant";
+SetIndexBuffer :: (renderPassEncoder: RenderPassEncoder, buffer: Buffer, format: IndexFormat, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetIndexBuffer";
+SetLabel :: (renderPassEncoder: RenderPassEncoder, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetLabel";
+SetPipeline :: (renderPassEncoder: RenderPassEncoder, pipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetPipeline";
+SetScissorRect :: (renderPassEncoder: RenderPassEncoder, x: u32, y: u32, width: u32, height: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetScissorRect";
+SetStencilReference :: (renderPassEncoder: RenderPassEncoder, reference: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetStencilReference";
+SetVertexBuffer :: (renderPassEncoder: RenderPassEncoder, slot: u32, buffer: Buffer, offset: u64, size: u64) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetVertexBuffer";
+SetViewport :: (renderPassEncoder: RenderPassEncoder, x: float, y: float, width: float, height: float, minDepth: float, maxDepth: float) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderSetViewport";
+WriteTimestamp :: (renderPassEncoder: RenderPassEncoder, querySet: QuerySet, queryIndex: u32) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderWriteTimestamp";
+AddRef :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderAddRef";
+Release :: (renderPassEncoder: RenderPassEncoder) -> void #foreign libwebgpu_dawn "wgpuRenderPassEncoderRelease";
 
 // Methods of RenderPipeline
-RenderPipelineGetBindGroupLayout :: (renderPipeline: RenderPipeline, groupIndex: u32) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuRenderPipelineGetBindGroupLayout";
-RenderPipelineSetLabel :: (renderPipeline: RenderPipeline, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineSetLabel";
-RenderPipelineAddRef :: (renderPipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineAddRef";
-RenderPipelineRelease :: (renderPipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineRelease";
+GetBindGroupLayout :: (renderPipeline: RenderPipeline, groupIndex: u32) -> BindGroupLayout #foreign libwebgpu_dawn "wgpuRenderPipelineGetBindGroupLayout";
+SetLabel :: (renderPipeline: RenderPipeline, label: StringView) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineSetLabel";
+AddRef :: (renderPipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineAddRef";
+Release :: (renderPipeline: RenderPipeline) -> void #foreign libwebgpu_dawn "wgpuRenderPipelineRelease";
 
 // Methods of Sampler
-SamplerSetLabel :: (sampler: Sampler, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSamplerSetLabel";
-SamplerAddRef :: (sampler: Sampler) -> void #foreign libwebgpu_dawn "wgpuSamplerAddRef";
-SamplerRelease :: (sampler: Sampler) -> void #foreign libwebgpu_dawn "wgpuSamplerRelease";
+SetLabel :: (sampler: Sampler, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSamplerSetLabel";
+AddRef :: (sampler: Sampler) -> void #foreign libwebgpu_dawn "wgpuSamplerAddRef";
+Release :: (sampler: Sampler) -> void #foreign libwebgpu_dawn "wgpuSamplerRelease";
 
 // Methods of ShaderModule
-ShaderModuleGetCompilationInfo :: (shaderModule: ShaderModule, callback: CompilationInfoCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfo";
-ShaderModuleGetCompilationInfo2 :: (shaderModule: ShaderModule, callbackInfo: CompilationInfoCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfo2";
-ShaderModuleGetCompilationInfoF :: (shaderModule: ShaderModule, callbackInfo: CompilationInfoCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfoF";
-ShaderModuleSetLabel :: (shaderModule: ShaderModule, label: StringView) -> void #foreign libwebgpu_dawn "wgpuShaderModuleSetLabel";
-ShaderModuleAddRef :: (shaderModule: ShaderModule) -> void #foreign libwebgpu_dawn "wgpuShaderModuleAddRef";
-ShaderModuleRelease :: (shaderModule: ShaderModule) -> void #foreign libwebgpu_dawn "wgpuShaderModuleRelease";
+GetCompilationInfo :: (shaderModule: ShaderModule, callback: CompilationInfoCallback, userdata: *void) -> void #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfo";
+GetCompilationInfo2 :: (shaderModule: ShaderModule, callbackInfo: CompilationInfoCallbackInfo2) -> Future #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfo2";
+GetCompilationInfoF :: (shaderModule: ShaderModule, callbackInfo: CompilationInfoCallbackInfo) -> Future #foreign libwebgpu_dawn "wgpuShaderModuleGetCompilationInfoF";
+SetLabel :: (shaderModule: ShaderModule, label: StringView) -> void #foreign libwebgpu_dawn "wgpuShaderModuleSetLabel";
+AddRef :: (shaderModule: ShaderModule) -> void #foreign libwebgpu_dawn "wgpuShaderModuleAddRef";
+Release :: (shaderModule: ShaderModule) -> void #foreign libwebgpu_dawn "wgpuShaderModuleRelease";
 
 // Methods of SharedBufferMemory
-SharedBufferMemoryBeginAccess :: (sharedBufferMemory: SharedBufferMemory, buffer: Buffer, descriptor: *SharedBufferMemoryBeginAccessDescriptor) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryBeginAccess";
-SharedBufferMemoryCreateBuffer :: (sharedBufferMemory: SharedBufferMemory, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuSharedBufferMemoryCreateBuffer";
-SharedBufferMemoryEndAccess :: (sharedBufferMemory: SharedBufferMemory, buffer: Buffer, descriptor: *SharedBufferMemoryEndAccessState) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryEndAccess";
-SharedBufferMemoryGetProperties :: (sharedBufferMemory: SharedBufferMemory, properties: *SharedBufferMemoryProperties) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryGetProperties";
-SharedBufferMemoryIsDeviceLost :: (sharedBufferMemory: SharedBufferMemory) -> Bool #foreign libwebgpu_dawn "wgpuSharedBufferMemoryIsDeviceLost";
-SharedBufferMemorySetLabel :: (sharedBufferMemory: SharedBufferMemory, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemorySetLabel";
-SharedBufferMemoryAddRef :: (sharedBufferMemory: SharedBufferMemory) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryAddRef";
-SharedBufferMemoryRelease :: (sharedBufferMemory: SharedBufferMemory) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryRelease";
+BeginAccess :: (sharedBufferMemory: SharedBufferMemory, buffer: Buffer, descriptor: *SharedBufferMemoryBeginAccessDescriptor) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryBeginAccess";
+CreateBuffer :: (sharedBufferMemory: SharedBufferMemory, descriptor: *BufferDescriptor) -> Buffer #foreign libwebgpu_dawn "wgpuSharedBufferMemoryCreateBuffer";
+EndAccess :: (sharedBufferMemory: SharedBufferMemory, buffer: Buffer, descriptor: *SharedBufferMemoryEndAccessState) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryEndAccess";
+GetProperties :: (sharedBufferMemory: SharedBufferMemory, properties: *SharedBufferMemoryProperties) -> Status #foreign libwebgpu_dawn "wgpuSharedBufferMemoryGetProperties";
+IsDeviceLost :: (sharedBufferMemory: SharedBufferMemory) -> Bool #foreign libwebgpu_dawn "wgpuSharedBufferMemoryIsDeviceLost";
+SetLabel :: (sharedBufferMemory: SharedBufferMemory, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemorySetLabel";
+AddRef :: (sharedBufferMemory: SharedBufferMemory) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryAddRef";
+Release :: (sharedBufferMemory: SharedBufferMemory) -> void #foreign libwebgpu_dawn "wgpuSharedBufferMemoryRelease";
 
 // Methods of SharedFence
-SharedFenceExportInfo_ :: (sharedFence: SharedFence, info: *SharedFenceExportInfo) -> void #foreign libwebgpu_dawn "wgpuSharedFenceExportInfo";
-SharedFenceAddRef :: (sharedFence: SharedFence) -> void #foreign libwebgpu_dawn "wgpuSharedFenceAddRef";
-SharedFenceRelease :: (sharedFence: SharedFence) -> void #foreign libwebgpu_dawn "wgpuSharedFenceRelease";
+ExportInfo :: (sharedFence: SharedFence, info: *SharedFenceExportInfo) -> void #foreign libwebgpu_dawn "wgpuSharedFenceExportInfo";
+AddRef :: (sharedFence: SharedFence) -> void #foreign libwebgpu_dawn "wgpuSharedFenceAddRef";
+Release :: (sharedFence: SharedFence) -> void #foreign libwebgpu_dawn "wgpuSharedFenceRelease";
 
 // Methods of SharedTextureMemory
-SharedTextureMemoryBeginAccess :: (sharedTextureMemory: SharedTextureMemory, texture: Texture, descriptor: *SharedTextureMemoryBeginAccessDescriptor) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryBeginAccess";
-SharedTextureMemoryCreateTexture :: (sharedTextureMemory: SharedTextureMemory, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuSharedTextureMemoryCreateTexture";
-SharedTextureMemoryEndAccess :: (sharedTextureMemory: SharedTextureMemory, texture: Texture, descriptor: *SharedTextureMemoryEndAccessState) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryEndAccess";
-SharedTextureMemoryGetProperties :: (sharedTextureMemory: SharedTextureMemory, properties: *SharedTextureMemoryProperties) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryGetProperties";
-SharedTextureMemoryIsDeviceLost :: (sharedTextureMemory: SharedTextureMemory) -> Bool #foreign libwebgpu_dawn "wgpuSharedTextureMemoryIsDeviceLost";
-SharedTextureMemorySetLabel :: (sharedTextureMemory: SharedTextureMemory, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemorySetLabel";
-SharedTextureMemoryAddRef :: (sharedTextureMemory: SharedTextureMemory) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryAddRef";
-SharedTextureMemoryRelease :: (sharedTextureMemory: SharedTextureMemory) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryRelease";
+BeginAccess :: (sharedTextureMemory: SharedTextureMemory, texture: Texture, descriptor: *SharedTextureMemoryBeginAccessDescriptor) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryBeginAccess";
+CreateTexture :: (sharedTextureMemory: SharedTextureMemory, descriptor: *TextureDescriptor) -> Texture #foreign libwebgpu_dawn "wgpuSharedTextureMemoryCreateTexture";
+EndAccess :: (sharedTextureMemory: SharedTextureMemory, texture: Texture, descriptor: *SharedTextureMemoryEndAccessState) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryEndAccess";
+GetProperties :: (sharedTextureMemory: SharedTextureMemory, properties: *SharedTextureMemoryProperties) -> Status #foreign libwebgpu_dawn "wgpuSharedTextureMemoryGetProperties";
+IsDeviceLost :: (sharedTextureMemory: SharedTextureMemory) -> Bool #foreign libwebgpu_dawn "wgpuSharedTextureMemoryIsDeviceLost";
+SetLabel :: (sharedTextureMemory: SharedTextureMemory, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemorySetLabel";
+AddRef :: (sharedTextureMemory: SharedTextureMemory) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryAddRef";
+Release :: (sharedTextureMemory: SharedTextureMemory) -> void #foreign libwebgpu_dawn "wgpuSharedTextureMemoryRelease";
 
 // Methods of Surface
-SurfaceConfigure :: (surface: Surface, config: *SurfaceConfiguration) -> void #foreign libwebgpu_dawn "wgpuSurfaceConfigure";
-SurfaceGetCapabilities :: (surface: Surface, adapter: Adapter, capabilities: *SurfaceCapabilities) -> Status #foreign libwebgpu_dawn "wgpuSurfaceGetCapabilities";
-SurfaceGetCurrentTexture :: (surface: Surface, surfaceTexture: *SurfaceTexture) -> void #foreign libwebgpu_dawn "wgpuSurfaceGetCurrentTexture";
-SurfacePresent :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfacePresent";
-SurfaceSetLabel :: (surface: Surface, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSurfaceSetLabel";
-SurfaceUnconfigure :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceUnconfigure";
-SurfaceAddRef :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceAddRef";
-SurfaceRelease :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceRelease";
+Configure :: (surface: Surface, config: *SurfaceConfiguration) -> void #foreign libwebgpu_dawn "wgpuSurfaceConfigure";
+GetCapabilities :: (surface: Surface, adapter: Adapter, capabilities: *SurfaceCapabilities) -> Status #foreign libwebgpu_dawn "wgpuSurfaceGetCapabilities";
+GetCurrentTexture :: (surface: Surface, surfaceTexture: *SurfaceTexture) -> void #foreign libwebgpu_dawn "wgpuSurfaceGetCurrentTexture";
+Present :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfacePresent";
+SetLabel :: (surface: Surface, label: StringView) -> void #foreign libwebgpu_dawn "wgpuSurfaceSetLabel";
+Unconfigure :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceUnconfigure";
+AddRef :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceAddRef";
+Release :: (surface: Surface) -> void #foreign libwebgpu_dawn "wgpuSurfaceRelease";
 
 // Methods of Texture
-TextureCreateErrorView :: (texture: Texture, descriptor: *TextureViewDescriptor) -> TextureView #foreign libwebgpu_dawn "wgpuTextureCreateErrorView";
-TextureCreateView :: (texture: Texture, descriptor: *TextureViewDescriptor) -> TextureView #foreign libwebgpu_dawn "wgpuTextureCreateView";
-TextureDestroy :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureDestroy";
-TextureGetDepthOrArrayLayers :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetDepthOrArrayLayers";
-TextureGetDimension :: (texture: Texture) -> TextureDimension #foreign libwebgpu_dawn "wgpuTextureGetDimension";
-TextureGetFormat :: (texture: Texture) -> TextureFormat #foreign libwebgpu_dawn "wgpuTextureGetFormat";
-TextureGetHeight :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetHeight";
-TextureGetMipLevelCount :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetMipLevelCount";
-TextureGetSampleCount :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetSampleCount";
-TextureGetUsage :: (texture: Texture) -> TextureUsage #foreign libwebgpu_dawn "wgpuTextureGetUsage";
-TextureGetWidth :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetWidth";
-TextureSetLabel :: (texture: Texture, label: StringView) -> void #foreign libwebgpu_dawn "wgpuTextureSetLabel";
-TextureAddRef :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureAddRef";
-TextureRelease :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureRelease";
+CreateErrorView :: (texture: Texture, descriptor: *TextureViewDescriptor) -> TextureView #foreign libwebgpu_dawn "wgpuTextureCreateErrorView";
+CreateView :: (texture: Texture, descriptor: *TextureViewDescriptor) -> TextureView #foreign libwebgpu_dawn "wgpuTextureCreateView";
+Destroy :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureDestroy";
+GetDepthOrArrayLayers :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetDepthOrArrayLayers";
+GetDimension :: (texture: Texture) -> TextureDimension #foreign libwebgpu_dawn "wgpuTextureGetDimension";
+GetFormat :: (texture: Texture) -> TextureFormat #foreign libwebgpu_dawn "wgpuTextureGetFormat";
+GetHeight :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetHeight";
+GetMipLevelCount :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetMipLevelCount";
+GetSampleCount :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetSampleCount";
+GetUsage :: (texture: Texture) -> TextureUsage #foreign libwebgpu_dawn "wgpuTextureGetUsage";
+GetWidth :: (texture: Texture) -> u32 #foreign libwebgpu_dawn "wgpuTextureGetWidth";
+SetLabel :: (texture: Texture, label: StringView) -> void #foreign libwebgpu_dawn "wgpuTextureSetLabel";
+AddRef :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureAddRef";
+Release :: (texture: Texture) -> void #foreign libwebgpu_dawn "wgpuTextureRelease";
 
 // Methods of TextureView
-TextureViewSetLabel :: (textureView: TextureView, label: StringView) -> void #foreign libwebgpu_dawn "wgpuTextureViewSetLabel";
-TextureViewAddRef :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextureViewAddRef";
-TextureViewRelease :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextureViewRelease";
+SetLabel :: (textureView: TextureView, label: StringView) -> void #foreign libwebgpu_dawn "wgpuTextureViewSetLabel";
+AddRef :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextureViewAddRef";
+Release :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextureViewRelease";
 
 #scope_file
 

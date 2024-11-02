@@ -113,7 +113,22 @@ TextureUsage :: enum u64 {
     }
 }
 
-dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
+dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> result: Declaration_Visit_Result = .RECURSE {
+    if decl.kind == .FUNCTION {
+        tof := decl.type.type_of_function;
+        if tof.arguments.count < 1 return;
+
+        first_arg := tof.arguments[0];
+        if first_arg.type.type_of_typedef == null return;
+
+        first_arg_name := first_arg.type.type_of_typedef.output_name;
+        if starts_with(decl.output_name, first_arg_name) {
+            decl.output_name = slice(decl.output_name, first_arg_name.count, decl.output_name.count - first_arg_name.count);
+        }
+
+        return;
+    }
+
     if starts_with(decl.name, "WGPUTextureUsage") ||
         starts_with(decl.name, "WGPUBufferUsage") ||
         starts_with(decl.name, "WGPUColorWriteMask") ||
@@ -129,6 +144,6 @@ dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_V
         return .STOP;
     }
 
-    return .RECURSE;
+    return;
 }
 
