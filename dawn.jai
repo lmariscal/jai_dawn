@@ -989,13 +989,19 @@ INTERNAL__HAVE_EMDAWNWEBGPU_HEADER :: struct {
 
 // Can be chained in WGPUAdapterInfo
 AdapterPropertiesD3D :: struct {
-    chain:       ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .AdapterPropertiesD3D
+    };
+
     shaderModel: u32;
 }
 
 // Can be chained in WGPUAdapterInfo
 AdapterPropertiesVk :: struct {
-    chain:         ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .AdapterPropertiesVk
+    };
+
     driverVersion: u32;
 }
 
@@ -1024,7 +1030,10 @@ BufferBindingLayout :: struct {
 
 // Can be chained in WGPUBufferDescriptor
 BufferHostMappedPointer :: struct {
-    chain:           ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .BufferHostMappedPointer
+    };
+
     pointer:         *void;
     disposeCallback: Callback;
     userdata:        *void;
@@ -1046,7 +1055,10 @@ Color :: struct {
 
 // Can be chained in WGPUColorTargetState
 ColorTargetStateExpandResolveTextureDawn :: struct {
-    chain:   ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ColorTargetStateExpandResolveTextureDawn
+    };
+
     enabled: Bool;
 }
 
@@ -1091,63 +1103,93 @@ CreateRenderPipelineAsyncCallbackInfo :: struct {
 
 // Can be chained in WGPUInstanceDescriptor
 DawnWGSLBlocklist :: struct {
-    chain:                   ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnWGSLBlocklist
+    };
+
     blocklistedFeatureCount: u64;
     blocklistedFeatures:     **u8;
 }
 
 // Can be chained in WGPUAdapterInfo
 DawnAdapterPropertiesPowerPreference :: struct {
-    chain:           ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .DawnAdapterPropertiesPowerPreference
+    };
+
     powerPreference: PowerPreference;
 }
 
 // Can be chained in WGPUBufferDescriptor
 DawnBufferDescriptorErrorInfoFromWireClient :: struct {
-    chain:       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnBufferDescriptorErrorInfoFromWireClient
+    };
+
     outOfMemory: Bool;
 }
 
 // Can be chained in WGPUComputePipelineDescriptor
 DawnComputePipelineFullSubgroups :: struct {
-    chain:                 ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnComputePipelineFullSubgroups
+    };
+
     requiresFullSubgroups: Bool;
 }
 
 // Can be chained in WGPUCommandEncoderDescriptor
 DawnEncoderInternalUsageDescriptor :: struct {
-    chain:             ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnEncoderInternalUsageDescriptor
+    };
+
     useInternalUsages: Bool;
 }
 
 // Can be chained in WGPUSupportedLimits
 DawnExperimentalImmediateDataLimits :: struct {
-    chain:                         ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .DawnExperimentalImmediateDataLimits
+    };
+
     maxImmediateDataRangeByteSize: u32;
 }
 
 // Can be chained in WGPUSupportedLimits
 DawnExperimentalSubgroupLimits :: struct {
-    chain:           ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .DawnExperimentalSubgroupLimits
+    };
+
     minSubgroupSize: u32;
     maxSubgroupSize: u32;
 }
 
 // Can be chained in WGPURenderPassColorAttachment
 DawnRenderPassColorAttachmentRenderToSingleSampled :: struct {
-    chain:               ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnRenderPassColorAttachmentRenderToSingleSampled
+    };
+
     implicitSampleCount: u32;
 }
 
 // Can be chained in WGPUShaderModuleDescriptor
 DawnShaderModuleSPIRVOptionsDescriptor :: struct {
-    chain:                      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnShaderModuleSPIRVOptionsDescriptor
+    };
+
     allowNonUniformDerivatives: Bool;
 }
 
 // Can be chained in WGPUTextureDescriptor
 DawnTextureInternalUsageDescriptor :: struct {
-    chain:         ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnTextureInternalUsageDescriptor
+    };
+
     internalUsage: TextureUsage;
 }
 
@@ -1155,7 +1197,10 @@ DawnTextureInternalUsageDescriptor :: struct {
 // Can be chained in WGPURequestAdapterOptions
 // Can be chained in WGPUDeviceDescriptor
 DawnTogglesDescriptor :: struct {
-    chain:               ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnTogglesDescriptor
+    };
+
     enabledToggleCount:  u64;
     enabledToggles:      **u8;
     disabledToggleCount: u64;
@@ -1164,7 +1209,10 @@ DawnTogglesDescriptor :: struct {
 
 // Can be chained in WGPUInstanceDescriptor
 DawnWireWGSLControl :: struct {
-    chain:              ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnWireWGSLControl
+    };
+
     enableExperimental: Bool;
     enableUnsafe:       Bool;
     enableTesting:      Bool;
@@ -1195,13 +1243,19 @@ Extent3D :: struct {
 
 // Can be chained in WGPUBindGroupEntry
 ExternalTextureBindingEntry :: struct {
-    chain:           ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ExternalTextureBindingEntry
+    };
+
     externalTexture: ExternalTexture;
 }
 
 // Can be chained in WGPUBindGroupLayoutEntry
 ExternalTextureBindingLayout :: struct {
-    chain: ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ExternalTextureBindingLayout
+    };
+
 }
 
 FormatCapabilities :: struct {
@@ -1320,7 +1374,10 @@ RenderPassDepthStencilAttachment :: struct {
 
 // Can be chained in WGPURenderPassDescriptor
 RenderPassDescriptorExpandResolveRect :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .RenderPassDescriptorExpandResolveRect
+    };
+
     x:      u32;
     y:      u32;
     width:  u32;
@@ -1329,7 +1386,10 @@ RenderPassDescriptorExpandResolveRect :: struct {
 
 // Can be chained in WGPURenderPassDescriptor
 RenderPassMaxDrawCount :: struct {
-    chain:        ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .RenderPassMaxDrawCount
+    };
+
     maxDrawCount: u64;
 }
 
@@ -1369,13 +1429,19 @@ SamplerBindingLayout :: struct {
 
 // Can be chained in WGPUShaderModuleDescriptor
 ShaderModuleCompilationOptions :: struct {
-    chain:      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ShaderModuleCompilationOptions
+    };
+
     strictMath: Bool;
 }
 
 // Can be chained in WGPUShaderModuleDescriptor
 ShaderSourceSPIRV :: struct {
-    chain:    ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ShaderSourceSPIRV
+    };
+
     codeSize: u32;
     code:     *u32;
 }
@@ -1404,25 +1470,37 @@ SharedBufferMemoryProperties :: struct {
 
 // Can be chained in WGPUSharedFenceDescriptor
 SharedFenceDXGISharedHandleDescriptor :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceDXGISharedHandleDescriptor
+    };
+
     handle: *void;
 }
 
 // Can be chained in WGPUSharedFenceExportInfo
 SharedFenceDXGISharedHandleExportInfo :: struct {
-    chain:  ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceDXGISharedHandleExportInfo
+    };
+
     handle: *void;
 }
 
 // Can be chained in WGPUSharedFenceDescriptor
 SharedFenceMTLSharedEventDescriptor :: struct {
-    chain:       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceMTLSharedEventDescriptor
+    };
+
     sharedEvent: *void;
 }
 
 // Can be chained in WGPUSharedFenceExportInfo
 SharedFenceMTLSharedEventExportInfo :: struct {
-    chain:       ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceMTLSharedEventExportInfo
+    };
+
     sharedEvent: *void;
 }
 
@@ -1433,68 +1511,101 @@ SharedFenceExportInfo :: struct {
 
 // Can be chained in WGPUSharedFenceDescriptor
 SharedFenceVkSemaphoreOpaqueFDDescriptor :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreOpaqueFDDescriptor
+    };
+
     handle: s32;
 }
 
 // Can be chained in WGPUSharedFenceExportInfo
 SharedFenceVkSemaphoreOpaqueFDExportInfo :: struct {
-    chain:  ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreOpaqueFDExportInfo
+    };
+
     handle: s32;
 }
 
 // Can be chained in WGPUSharedFenceDescriptor
 SharedFenceVkSemaphoreSyncFDDescriptor :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreSyncFDDescriptor
+    };
+
     handle: s32;
 }
 
 // Can be chained in WGPUSharedFenceExportInfo
 SharedFenceVkSemaphoreSyncFDExportInfo :: struct {
-    chain:  ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreSyncFDExportInfo
+    };
+
     handle: s32;
 }
 
 // Can be chained in WGPUSharedFenceDescriptor
 SharedFenceVkSemaphoreZirconHandleDescriptor :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreZirconHandleDescriptor
+    };
+
     handle: u32;
 }
 
 // Can be chained in WGPUSharedFenceExportInfo
 SharedFenceVkSemaphoreZirconHandleExportInfo :: struct {
-    chain:  ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedFenceVkSemaphoreZirconHandleExportInfo
+    };
+
     handle: u32;
 }
 
 // Can be chained in WGPUSharedTextureMemoryBeginAccessDescriptor
 SharedTextureMemoryD3DSwapchainBeginState :: struct {
-    chain:       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryD3DSwapchainBeginState
+    };
+
     isSwapchain: Bool;
 }
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryDXGISharedHandleDescriptor :: struct {
-    chain:         ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryDXGISharedHandleDescriptor
+    };
+
     handle:        *void;
     useKeyedMutex: Bool;
 }
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryEGLImageDescriptor :: struct {
-    chain: ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryEGLImageDescriptor
+    };
+
     image: *void;
 }
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryIOSurfaceDescriptor :: struct {
-    chain:     ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryIOSurfaceDescriptor
+    };
+
     ioSurface: *void;
 }
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryAHardwareBufferDescriptor :: struct {
-    chain:             ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryAHardwareBufferDescriptor
+    };
+
     handle:            *void;
     useExternalFormat: Bool;
 }
@@ -1524,7 +1635,10 @@ SharedTextureMemoryEndAccessState :: struct {
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryOpaqueFDDescriptor :: struct {
-    chain:               ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryOpaqueFDDescriptor
+    };
+
     vkImageCreateInfo:   *void;
     memoryFD:            s32;
     memoryTypeIndex:     u32;
@@ -1534,34 +1648,49 @@ SharedTextureMemoryOpaqueFDDescriptor :: struct {
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryVkDedicatedAllocationDescriptor :: struct {
-    chain:               ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryVkDedicatedAllocationDescriptor
+    };
+
     dedicatedAllocation: Bool;
 }
 
 // Can be chained in WGPUSharedTextureMemoryBeginAccessDescriptor
 SharedTextureMemoryVkImageLayoutBeginState :: struct {
-    chain:     ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryVkImageLayoutBeginState
+    };
+
     oldLayout: s32;
     newLayout: s32;
 }
 
 // Can be chained in WGPUSharedTextureMemoryEndAccessState
 SharedTextureMemoryVkImageLayoutEndState :: struct {
-    chain:     ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryVkImageLayoutEndState
+    };
+
     oldLayout: s32;
     newLayout: s32;
 }
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryZirconHandleDescriptor :: struct {
-    chain:          ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryZirconHandleDescriptor
+    };
+
     memoryFD:       u32;
     allocationSize: u64;
 }
 
 // Can be chained in WGPUBindGroupLayoutEntry
 StaticSamplerBindingLayout :: struct {
-    chain:                 ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .StaticSamplerBindingLayout
+    };
+
     sampler:               Sampler;
     sampledTextureBinding: u32;
 }
@@ -1611,52 +1740,76 @@ SurfaceConfiguration :: struct {
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceDescriptorFromWindowsCoreWindow :: struct {
-    chain:      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceDescriptorFromWindowsCoreWindow
+    };
+
     coreWindow: *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceDescriptorFromWindowsSwapChainPanel :: struct {
-    chain:          ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceDescriptorFromWindowsSwapChainPanel
+    };
+
     swapChainPanel: *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceXCBWindow :: struct {
-    chain:      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceXCBWindow
+    };
+
     connection: *void;
     window:     u32;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceAndroidNativeWindow :: struct {
-    chain:  ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceAndroidNativeWindow
+    };
+
     window: *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceMetalLayer :: struct {
-    chain: ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceMetalLayer
+    };
+
     layer: *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceWaylandSurface :: struct {
-    chain:   ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceWaylandSurface
+    };
+
     display: *void;
     surface: *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceWindowsHWND :: struct {
-    chain:     ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceWindowsHWND
+    };
+
     hinstance: *void;
     hwnd:      *void;
 }
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceXlibWindow :: struct {
-    chain:   ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceXlibWindow
+    };
+
     display: *void;
     window:  u64;
 }
@@ -1676,7 +1829,10 @@ TextureBindingLayout :: struct {
 
 // Can be chained in WGPUTextureDescriptor
 TextureBindingViewDimensionDescriptor :: struct {
-    chain:                       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .TextureBindingViewDimensionDescriptor
+    };
+
     textureBindingViewDimension: TextureViewDimension;
 }
 
@@ -1702,7 +1858,10 @@ VertexAttribute :: struct {
 // Can be chained in WGPUSamplerDescriptor
 // Can be chained in WGPUTextureViewDescriptor
 YCbCrVkDescriptor :: struct {
-    chain:                       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .YCbCrVkDescriptor
+    };
+
     vkFormat:                    u32;
     vkYCbCrModel:                u32;
     vkYCbCrRange:                u32;
@@ -1736,7 +1895,10 @@ AdapterInfo :: struct {
 
 // Can be chained in WGPUAdapterInfo
 AdapterPropertiesMemoryHeaps :: struct {
-    chain:     ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .AdapterPropertiesMemoryHeaps
+    };
+
     heapCount: u64;
     heapInfo:  *MemoryHeapInfo;
 }
@@ -1809,7 +1971,10 @@ ConstantEntry :: struct {
 
 // Can be chained in WGPUDeviceDescriptor
 DawnCacheDeviceDescriptor :: struct {
-    chain:             ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .DawnCacheDeviceDescriptor
+    };
+
     isolationKey:      StringView;
     loadDataFunction:  DawnLoadCacheDataFunction;
     storeDataFunction: DawnStoreCacheDataFunction;
@@ -1832,7 +1997,10 @@ DepthStencilState :: struct {
 
 // Can be chained in WGPUFormatCapabilities
 DrmFormatCapabilities :: struct {
-    chain:           ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .DrmFormatCapabilities
+    };
+
     propertiesCount: u64;
     properties:      *DrmFormatProperties;
 }
@@ -1892,7 +2060,10 @@ PipelineLayoutDescriptor :: struct {
 
 // Can be chained in WGPUPipelineLayoutDescriptor
 PipelineLayoutPixelLocalStorage :: struct {
-    chain:                      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .PipelineLayoutPixelLocalStorage
+    };
+
     totalPixelLocalStorageSize: u64;
     storageAttachmentCount:     u64;
     storageAttachments:         *PipelineLayoutStorageAttachment;
@@ -1972,7 +2143,10 @@ ShaderModuleDescriptor :: struct {
 
 // Can be chained in WGPUShaderModuleDescriptor
 ShaderSourceWGSL :: struct {
-    chain: ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .ShaderSourceWGSL
+    };
+
     code:  StringView;
 }
 
@@ -1988,7 +2162,10 @@ SharedFenceDescriptor :: struct {
 
 // Can be chained in WGPUSharedTextureMemoryProperties
 SharedTextureMemoryAHardwareBufferProperties :: struct {
-    chain:     ChainedStructOut;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryAHardwareBufferProperties
+    };
+
     yCbCrInfo: YCbCrVkDescriptor;
 }
 
@@ -1999,7 +2176,10 @@ SharedTextureMemoryDescriptor :: struct {
 
 // Can be chained in WGPUSharedTextureMemoryDescriptor
 SharedTextureMemoryDmaBufDescriptor :: struct {
-    chain:       ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SharedTextureMemoryDmaBufDescriptor
+    };
+
     size:        Extent3D;
     drmFormat:   u32;
     drmModifier: u64;
@@ -2026,7 +2206,10 @@ SurfaceDescriptor :: struct {
 
 // Can be chained in WGPUSurfaceDescriptor
 SurfaceSourceCanvasHTMLSelector_Emscripten :: struct {
-    chain:    ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .SurfaceSourceCanvasHTMLSelector_Emscripten
+    };
+
     selector: StringView;
 }
 
@@ -2118,7 +2301,10 @@ RenderPassDescriptor :: struct {
 
 // Can be chained in WGPURenderPassDescriptor
 RenderPassPixelLocalStorage :: struct {
-    chain:                      ChainedStruct;
+    chain: ChainedStruct = .{
+        sType = .RenderPassPixelLocalStorage
+    };
+
     totalPixelLocalStorageSize: u64;
     storageAttachmentCount:     u64;
     storageAttachments:         *RenderPassStorageAttachment;
@@ -2833,4 +3019,5 @@ AddRef :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextur
 Release :: (textureView: TextureView) -> void #foreign libwebgpu_dawn "wgpuTextureViewRelease";
 
 #scope_file
+
 

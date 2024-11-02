@@ -111,6 +111,47 @@ TextureUsage :: enum u64 {
         print("Failed to generate bindings");
         exit(1);
     }
+
+    log("Adding default for ChainedStructs...");
+    bindings_data, ok= := read_entire_file("dawn.jai");
+    if !ok {
+        print("Failed to read generated bindings");
+        exit(1);
+    }
+
+    count := 0;
+    builder: String_Builder;
+    init_string_builder(*builder);
+    defer reset(*builder);
+
+    lines := split(bindings_data, "\n");
+    for lines {
+        no_whitespace := replace(it, " ", "");
+        if find_index_from_left(no_whitespace, ":ChainedStruct;") != -1 ||
+            find_index_from_left(no_whitespace, ":ChainedStructOut;") != -1{
+
+            parent_line := replace(lines[it_index - 1], " ", "");
+            start_struct := find_index_from_left(parent_line, "::struct");
+            if find_index_from_left(parent_line, "::struct") == -1 continue;
+            name := slice(parent_line, 0, start_struct);
+
+            print_to_builder(*builder, "    chain: ChainedStruct = .{\n        sType = .%\n    };\n\n", name);
+            count += 1;
+            continue;
+        }
+
+        print_to_builder(*builder, "%\n", it);
+    }
+    log("Found % ChainedStructs", count);
+
+    help_string := builder_to_string(*builder);
+    defer free(help_string);
+
+    ok = write_entire_file("dawn.jai", help_string);
+    if !ok {
+        print("Failed to write generated bindings");
+        exit(1);
+    }
 }
 
 dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> result: Declaration_Visit_Result = .RECURSE {
@@ -147,6 +188,10 @@ dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> result: Decla
     if decl.name == "WGPUBool" || decl.name == "WGPUFlags" {
         decl.decl_flags |= .OMIT_FROM_OUTPUT;
         return .STOP;
+    }
+
+    if find_index_from_left(decl.output_name, "_2D") != -1 {
+        log("Stripping %", decl.output_name);
     }
 
     return;
