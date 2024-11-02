@@ -2641,7 +2641,7 @@ ForceLoss :: (device: Device, type: DeviceLostReason, message: StringView) -> vo
 GetAHardwareBufferProperties :: (device: Device, handle: *void, properties: *AHardwareBufferProperties) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetAHardwareBufferProperties";
 GetAdapter :: (device: Device) -> Adapter #foreign libwebgpu_dawn "wgpuDeviceGetAdapter";
 GetLimits :: (device: Device, limits: *SupportedLimits) -> Status #foreign libwebgpu_dawn "wgpuDeviceGetLimits";
-GetLostFuture :: (device: Device) -> Future #foreign __UnknownLib "wgpuDeviceGetLostFuture";
+
 GetQueue :: (device: Device) -> Queue #foreign libwebgpu_dawn "wgpuDeviceGetQueue";
 HasFeature :: (device: Device, feature: FeatureName) -> Bool #foreign libwebgpu_dawn "wgpuDeviceHasFeature";
 ImportSharedBufferMemory :: (device: Device, descriptor: *SharedBufferMemoryDescriptor) -> SharedBufferMemory #foreign libwebgpu_dawn "wgpuDeviceImportSharedBufferMemory";

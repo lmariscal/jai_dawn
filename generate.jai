@@ -115,6 +115,11 @@ TextureUsage :: enum u64 {
 
 dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> result: Declaration_Visit_Result = .RECURSE {
     if decl.kind == .FUNCTION {
+        if decl.name == "wgpuDeviceGetLostFuture" {
+            decl.decl_flags |= .OMIT_FROM_OUTPUT;
+            return .STOP;
+        }
+
         tof := decl.type.type_of_function;
         if tof.arguments.count < 1 return;
 
@@ -139,7 +144,7 @@ dawn_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> result: Decla
         decl.decl_flags |= .OMIT_FROM_OUTPUT;
         return .STOP;
     }
-    if decl.name == "WGPUBool" || decl.name == "WGPUFlags" || decl.name == "wgpuDeviceGetLostFuture" {
+    if decl.name == "WGPUBool" || decl.name == "WGPUFlags" {
         decl.decl_flags |= .OMIT_FROM_OUTPUT;
         return .STOP;
     }
