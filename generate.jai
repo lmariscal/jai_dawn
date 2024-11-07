@@ -106,14 +106,14 @@ TextureUsage :: enum u64 {
         header=HEADER,
 
         visitor=dawn_visitor,
-    }, "dawn.jai");
+    }, "dawn_native.jai");
     if !ok {
         print("Failed to generate bindings");
         exit(1);
     }
 
     log("Adding default for ChainedStructs...");
-    bindings_data, ok= := read_entire_file("dawn.jai");
+    bindings_data, ok= := read_entire_file("dawn_native.jai");
     if !ok {
         print("Failed to read generated bindings");
         exit(1);
@@ -147,7 +147,38 @@ TextureUsage :: enum u64 {
     help_string := builder_to_string(*builder);
     defer free(help_string);
 
-    ok = write_entire_file("dawn.jai", help_string);
+    ok = write_entire_file("dawn_native.jai", help_string);
+    if !ok {
+        print("Failed to write generated bindings");
+        exit(1);
+    }
+
+    create_web();
+}
+
+create_web :: () {
+    log("Creating web bindings...");
+    bindings_data, ok := read_entire_file("dawn_native.jai");
+    if !ok {
+        print("Failed to read generated bindings");
+        exit(1);
+    }
+
+    count := 0;
+    builder: String_Builder;
+    init_string_builder(*builder);
+    defer reset(*builder);
+
+    lines := split(bindings_data, "\n");
+    for lines {
+        str := replace(it, " libwebgpu_dawn ", " ");
+        print_to_builder(*builder, "%\n", str);
+    }
+
+    help_string := builder_to_string(*builder);
+    defer free(help_string);
+
+    ok = write_entire_file("dawn_wasm.jai", help_string);
     if !ok {
         print("Failed to write generated bindings");
         exit(1);
