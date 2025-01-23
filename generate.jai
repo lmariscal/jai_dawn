@@ -19,7 +19,7 @@
 
     libnames: [..]string;
     if OS == {
-        case .WINDOWS; array_add(*libnames, "webgpu_dawn");
+        case .WINDOWS; array_add(*libnames, "libwebgpu_dawn");
         case; array_add(*libnames, "libwebgpu_dawn");
     }
 
