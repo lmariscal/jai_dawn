@@ -6,5 +6,6 @@
 
 #if OS == .LINUX {
     libwebgpu_dawn :: #library "prebuilt/linux/libwebgpu_dawn";
+} else #if OS == .WINDOWS {
+    libwebgpu_dawn :: #library "prebuilt/windows/webgpu_dawn";
 }
-
