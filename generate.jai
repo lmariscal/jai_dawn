@@ -18,7 +18,10 @@
     }
 
     libnames: [..]string;
-    array_add(*libnames, "libwebgpu_dawn");
+    if OS == {
+        case .WINDOWS; array_add(*libnames, "webgpu_dawn");
+        case; array_add(*libnames, "libwebgpu_dawn");
+    }
 
     strip_prefixes: [..]string;
     array_add(*strip_prefixes, "WGPU", "WGPU_", "wgpu");
@@ -27,7 +30,7 @@
     array_add(*include_paths, "./prebuilt/include");
 
     source_files: [..]string;
-    array_add(*source_files, "./prebuilt/include/dawn/webgpu.h");
+    array_add(*source_files, "./prebuilt/include/webgpu.h");
 
     strip_enum_value_prefixes: [..][2]string;
     array_add(*strip_enum_value_prefixes, .["WGPU", "TextureUsage"]);
